@@ -9,19 +9,22 @@ namespace BlackJack
 
         public Deck()
         {
-            deck = new List<Card>(); // Initialize the class-level deck field
+            deck = new List<Card>(); 
 
-            // Populate the deck with cards
-            for (int suit = 1; suit <= 4; suit++)
+            for (int i = 0; i < 5; i++)// most casinos play with more than 1 deck to stop card counting
             {
-                for (int rank = 2; rank <= 14; rank++)
+
+                for (int suit = 1; suit <= 4; suit++)
                 {
-                    deck.Add(new Card(rank, suit));
+                    for (int rank = 2; rank <= 14; rank++)
+                    {
+                        deck.Add(new Card(rank, suit));
+                    }
                 }
             }
         }
 
-        // Shuffle the deck using the Fisher-Yates algorithm
+        
         public void Shuffle()
         {
             Random rnd = new Random();
@@ -34,7 +37,7 @@ namespace BlackJack
             }
         }
 
-        // Deal a card from the deck
+        
         public Card Deal()
         {
             if (deck.Count == 0)
@@ -46,14 +49,6 @@ namespace BlackJack
             return dealtCard;
         }
 
-        // Print all cards in the deck (for debugging purposes)
-        public void Print()
-        {
-            foreach (Card card in deck)
-            {
-                Console.WriteLine(card.SuitSymbol);
-            }
-        }
     }
 
 }

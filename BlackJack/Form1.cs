@@ -31,8 +31,8 @@ namespace BlackJack
 
         private void Hitbutton_Click(object sender, EventArgs e)
         {
-            
 
+            game.PlayerHit();
             
         }
 
@@ -43,6 +43,11 @@ namespace BlackJack
         }
         //double button
         private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

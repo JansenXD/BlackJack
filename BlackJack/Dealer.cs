@@ -22,11 +22,18 @@ namespace BlackJack
         }
         public void DealCards()
         {
+            Playerhand.ClearHands();
+            Dealerhand.ClearHands();
             Dealerhand.Hit(Cards.Deal());
             Playerhand.Hit(Cards.Deal());
             Dealerhand.Hit(Cards.Deal());
             Playerhand.Hit(Cards.Deal());
-
+            if (Dealerhand.HandValue == 21 || Playerhand.HandValue==21)
+            {
+                Dealerhand.DPrintHand(DealerBox);
+                Playerhand.PPrintHand(PlayerBox);
+                DecideWinner();
+            }
             Dealerhand.RevealFirst(DealerBox);
             Playerhand.PPrintHand(PlayerBox);
         }
@@ -36,16 +43,26 @@ namespace BlackJack
             while (Dealerhand.HandValue < 17)
             {
                 Dealerhand.Hit(Cards.Deal());
+                if (Dealerhand.HandValue > 21 && Dealerhand.AceCount > 0)
+                {
+                    Dealerhand.HandValue = Dealerhand.HandValue - 10;
+                    Dealerhand.AceCount--;
+                }
                 Dealerhand.DPrintHand(DealerBox);
-                Thread.Sleep(1000);
-                
+              
+
             }
             DecideWinner();
 
         }
         private void DecideWinner()
         {
-            if (Dealerhand.HandValue > Playerhand.HandValue)
+            if (Dealerhand.HandValue == Playerhand.HandValue && Dealerhand.HandValue < 22)
+            {
+                MessageBox.Show("Push", "Tie", MessageBoxButtons.OK);
+
+            }
+            else if (Dealerhand.HandValue > Playerhand.HandValue && Dealerhand.HandValue<22 || Playerhand.HandValue>21)
             {
                 MessageBox.Show("You LOSE", "LOL", MessageBoxButtons.OK);
 
@@ -54,7 +71,28 @@ namespace BlackJack
                 MessageBox.Show("You WIN", "GGS", MessageBoxButtons.OK);
 
             }
+            Playerhand.ClearHands();
+            Dealerhand.ClearHands();
+            DealCards();
         }
+        public void PlayerHit()
+        {
+            Playerhand.Hit(Cards.Deal());
+            if (Playerhand.HandValue > 21 && Playerhand.AceCount > 0)
+            {
+                Playerhand.HandValue = Playerhand.HandValue - 10;
+                Playerhand.AceCount--;
+            }
+            else if (Playerhand.HandValue > 21)
+            {
+                Playerhand.PPrintHand(PlayerBox);
+                DecideWinner();
+            }
+            Playerhand.PPrintHand(PlayerBox);
+            
+
+        }
+
         
         
             
