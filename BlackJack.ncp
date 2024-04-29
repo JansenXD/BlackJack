@@ -1,0 +1,106 @@
+<Project>
+  <Name>BlackJack</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.ClassDiagram" assembly="NClass.DiagramEditor, Version=2.8.0.1, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Dealer</Name>
+        <Access>Public</Access>
+        <Location left="331" top="437" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void DealCards()</Member>
+        <Member type="Method">public void PlayTurn()</Member>
+        <Member type="Method">public void DecideWinner()</Member>
+        <Member type="Method">public void PlayerHit()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Deck</Name>
+        <Access>Public</Access>
+        <Location left="633" top="464" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">list &lt;Card&gt; Cards</Member>
+        <Member type="Method">public void Shuffle()</Member>
+        <Member type="Method">public card Deal()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Card</Name>
+        <Access>Public</Access>
+        <Location left="633" top="747" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int Suit</Member>
+        <Member type="Field">int Value</Member>
+        <Member type="Method">public int value()</Member>
+        <Member type="Method">public void Suit()</Member>
+        <Member type="Method">public void SuitSymbol()</Member>
+        <Member type="Method">public void Symbol()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="74" top="464" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int HandValue</Member>
+        <Member type="Field">int CardCount</Member>
+        <Member type="Field">int AceCount</Member>
+        <Member type="Field">List&lt;Card&gt; Hand</Member>
+        <Member type="Method">public bool Hit()</Member>
+        <Member type="Method">public bool Stand()</Member>
+        <Member type="Method">public void DPrinthand()</Member>
+        <Member type="Method">public void PPrinthand()</Member>
+        <Member type="Method">public void RevealFirst()</Member>
+        <Member type="Method">public void ClearHands()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BlackJack</Name>
+        <Access>Public</Access>
+        <Location left="331" top="124" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">listbox Dealerbox</Member>
+        <Member type="Field">listbox Playerbox</Member>
+        <Member type="Method">public void DealButton()</Member>
+        <Member type="Method">public void StandButton()</Member>
+        <Member type="Method">public void HitButton()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Containers />
+    <Relationships>
+      <Relationship type="Association" first="0" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

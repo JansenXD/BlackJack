@@ -9,7 +9,7 @@ namespace BlackJack
 {
     internal class Player
     {
-        private List<Card> hand;
+        public List<Card> hand;
         public int CardCount { get; private set; } 
         public int HandValue { get;  set; }
         public int AceCount { get; set; }
@@ -44,18 +44,7 @@ namespace BlackJack
             }
                 
         }
-        public void DPrintHand(ListBox dealBox)
-        {
-            dealBox.Items.Clear(); 
-            dealBox.Items.Add("Dealer's Hand:");
-
-            foreach (Card card in hand)
-            {
-                dealBox.Items.Add($"{card.Symbol} {card.SuitSymbol}");
-            }
-
-            dealBox.Items.Add($"Hand Value: {HandValue}");
-        }
+       
         public void PPrintHand(ListBox dealBox)
         {
             dealBox.Items.Clear(); 
@@ -68,21 +57,7 @@ namespace BlackJack
 
             dealBox.Items.Add($"Hand Value: {HandValue}");
         }
-        public void RevealFirst(ListBox dealBox)
-        {
-            dealBox.Items.Clear();
-            dealBox.Items.Add("Dealer's Hand:");
-            Card firstCard = hand[0];
-            dealBox.Items.Add($"{firstCard.Symbol} {firstCard.SuitSymbol}");
-            if (hand[0].Value > 11)
-            {
-                dealBox.Items.Add($"Hand Value: 10");
-            }
-            else
-            {
-                dealBox.Items.Add($"Hand Value: {hand[0].Value}");
-            }
-        }
+       
         public void ClearHands()
         {
             hand.Clear();

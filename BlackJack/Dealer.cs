@@ -7,9 +7,9 @@ using System.Windows.Forms;
 using System.Threading;
 namespace BlackJack
 {
-    internal class Dealer
+    internal class Dealer 
     {
-        private Player Dealerhand = new Player();
+        private DealerHand Dealerhand = new DealerHand();
         private Player Playerhand = new Player();
         private Deck Cards = new Deck();
         private ListBox DealerBox = new ListBox();
