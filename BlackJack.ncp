@@ -42,24 +42,6 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Player</Name>
-        <Access>Public</Access>
-        <Location left="74" top="464" />
-        <Size width="162" height="247" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">int HandValue</Member>
-        <Member type="Field">int CardCount</Member>
-        <Member type="Field">int AceCount</Member>
-        <Member type="Field">List&lt;Card&gt; Hand</Member>
-        <Member type="Method">public bool Hit()</Member>
-        <Member type="Method">public bool Stand()</Member>
-        <Member type="Method">public void DPrinthand()</Member>
-        <Member type="Method">public void PPrinthand()</Member>
-        <Member type="Method">public void RevealFirst()</Member>
-        <Member type="Method">public void ClearHands()</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
         <Name>BlackJack</Name>
         <Access>Public</Access>
         <Location left="331" top="124" />
@@ -72,28 +54,66 @@
         <Member type="Method">public void HitButton()</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>Dealerhand</Name>
+        <Access>Public</Access>
+        <Location left="74" top="764" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void DPrinthand()</Member>
+        <Member type="Method">public void RevealFirst()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="74" top="464" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int HandValue</Member>
+        <Member type="Field">int CardCount</Member>
+        <Member type="Field">int AceCount</Member>
+        <Member type="Field">List&lt;Card&gt; Hand</Member>
+        <Member type="Method">public bool Hit()</Member>
+        <Member type="Method">public bool Stand()</Member>
+        <Member type="Method">public void PPrinthand()</Member>
+        <Member type="Method">public void ClearHands()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Containers />
     <Relationships>
-      <Relationship type="Association" first="0" second="3">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
       <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="4" second="0">
+      <Relationship type="Association" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="4">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>

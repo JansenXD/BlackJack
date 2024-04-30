@@ -44,8 +44,8 @@ namespace BlackJack
             }
                 
         }
-       
-        public void PPrintHand(ListBox dealBox)
+
+        public virtual void PrintHand(ListBox dealBox)
         {
             dealBox.Items.Clear(); 
             dealBox.Items.Add("Player's Hand:");

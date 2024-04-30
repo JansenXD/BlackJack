@@ -30,16 +30,16 @@ namespace BlackJack
             Playerhand.Hit(Cards.Deal());
             if (Dealerhand.HandValue == 21 || Playerhand.HandValue==21)
             {
-                Dealerhand.DPrintHand(DealerBox);
-                Playerhand.PPrintHand(PlayerBox);
+                Dealerhand.PrintHand(DealerBox);
+                Playerhand.PrintHand(PlayerBox);
                 DecideWinner();
             }
             Dealerhand.RevealFirst(DealerBox);
-            Playerhand.PPrintHand(PlayerBox);
+            Playerhand.PrintHand(PlayerBox);
         }
         public void PlayTurn()
         {
-            Dealerhand.DPrintHand(DealerBox);
+            Dealerhand.PrintHand(DealerBox);
             while (Dealerhand.HandValue < 17)
             {
                 Dealerhand.Hit(Cards.Deal());
@@ -48,7 +48,7 @@ namespace BlackJack
                     Dealerhand.HandValue = Dealerhand.HandValue - 10;
                     Dealerhand.AceCount--;
                 }
-                Dealerhand.DPrintHand(DealerBox);
+                Dealerhand.PrintHand(DealerBox);
               
 
             }
@@ -85,10 +85,10 @@ namespace BlackJack
             }
             else if (Playerhand.HandValue > 21)
             {
-                Playerhand.PPrintHand(PlayerBox);
+                Playerhand.PrintHand(PlayerBox);
                 DecideWinner();
             }
-            Playerhand.PPrintHand(PlayerBox);
+            Playerhand.PrintHand(PlayerBox);
             
 
         }

@@ -41,7 +41,7 @@ namespace BlackJack
            game.PlayTurn();
           
         }
-        //double button
+     
         private void button4_Click(object sender, EventArgs e)
         {
 

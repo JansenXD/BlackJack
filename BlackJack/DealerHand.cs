@@ -15,7 +15,7 @@ namespace BlackJack
             
         }
 
-        public void DPrintHand(ListBox dealBox)
+        public override void PrintHand(ListBox dealBox)
         {
             dealBox.Items.Clear();
             dealBox.Items.Add("Dealer's Hand:");
